@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Historia de las Tecnologías de la Información</title>
+
+<style>
+:root {
+  --navy: #102a43;
+  --blue: #1d4e89;
+  --accent: #3b82a0;
+  --bg: #f2f5f8;
+  --ink: #243447;
+  --muted: #627386;
+  --line: #d9e2ec;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.65;
+}
+
+.topbar {
+  height: 8px;
+  background: linear-gradient(90deg, var(--navy), var(--blue), #69a7bc);
+}
+
+nav, footer {
+  background: var(--navy);
+  color: white;
+}
+
+.nav-inner {
+  max-width: 1120px;
+  margin: auto;
+  padding: 20px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.nav-tag {
+  font-size: 12px;
+  color: #d4e2ee;
+}
+
+.hero {
+  background: var(--navy);
+  color: white;
+  padding: 70px 24px;
+}
+
+.hero-inner {
+  max-width: 1060px;
+  margin: auto;
+}
+
+.kicker {
+  color: #9ec5d8;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 12px;
+  margin-bottom: 18px;
+}
+
+h1 {
+  font-family: Georgia, serif;
+  font-weight: normal;
+  font-size: clamp(36px, 6vw, 70px);
+  line-height: 1.1;
+  max-width: 850px;
+}
+
+.hero p {
+  max-width: 680px;
+  color: #dce7f0;
+  font-size: 18px;
+}
+
+.hero-rule {
+  width: 74px;
+  height: 4px;
+  background: #83b7c9;
+  margin-top: 28px;
+}
+
+main {
+  max-width: 1060px;
+  margin: auto;
+  padding: 38px 24px 70px;
+}
+
+.section-head {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.section-no {
+  color: var(--accent);
+  font-family: Georgia, serif;
+  font-size: 21px;
+}
+
+h2 {
+  color: var(--navy);
+  font-family: Georgia, serif;
+  font-weight: normal;
+  font-size: 29px;
+  margin: 0;
+}
+
+h3 {
+  color: var(--navy);
+  margin: 7px 0;
+}
+
+.lead-card {
+  background: white;
+  padding: 28px 30px;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--blue);
+  margin-bottom: 42px;
+}
+
+.lead-card p {
+  margin: 0;
+  color: #43566a;
+}
+
+.timeline-wrap {
+  margin-bottom: 44px;
+}
+
+.timeline {
+  position: relative;
+  margin-top: 26px;
+  padding-left: 30px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 8px;
+  bottom: 12px;
+  width: 2px;
+  background: #b8ccdc;
+}
+
+.event {
+  position: relative;
+  padding: 0 0 25px 18px;
+}
+
+.event:last-child {
+  padding-bottom: 0;
+}
+
+.event::before {
+  content: "";
+  position: absolute;
+  left: -30px;
+  top: 7px;
+  width: 12px;
+  height: 12px;
+  border: 3px solid var(--bg);
+  background: var(--blue);
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px var(--blue);
+}
+
+.year {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accent);
+  font-weight: bold;
+}
+
+.event p {
+  margin: 4px 0 0;
+  color: var(--muted);
+  max-width: 790px;
+}
+
+.padlet-panel {
+  background: white;
+  border: 1px solid var(--line);
+  margin-bottom: 42px;
+}
+
+.panel-head {
+  padding: 23px 26px;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+}
+
+.panel-head p {
+  color: var(--muted);
+}
+
+.btn {
+  display: inline-block;
+  background: var(--blue);
+  color: white;
+  text-decoration: none;
+  padding: 11px 16px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background: var(--navy);
+}
+
+iframe {
+  display: block;
+  width: 100%;
+  height: 650px;
+  border: 0;
+}
+
+.fallback {
+  padding: 12px 26px 20px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.conclusion {
+  background: #e7eef5;
+  border-top: 3px solid var(--blue);
+  padding: 27px 30px;
+}
+
+.conclusion p {
+  color: #43566a;
+}
+
+footer {
+  padding: 24px;
+  text-align: center;
+  font-size: 13px;
+}
+
+@media (max-width: 650px) {
+  .nav-inner {
+    padding: 17px;
+  }
+
+  .nav-tag {
+    display: none;
+  }
+
+  .hero {
+    padding: 50px 20px;
+  }
+
+  main {
+    padding: 28px 16px 50px;
+  }
+
+  .lead-card {
+    padding: 22px;
+  }
+
+  .panel-head {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  iframe {
+    height: 560px;
+  }
+
+  h2 {
+    font-size: 25px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="topbar"></div>
+
+<nav>
+  <div class="nav-inner">
+    <div class="brand">U | PORTAL ACADÉMICO</div>
+    <div class="nav-tag">Tecnología · Historia · Sociedad</div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="kicker">
+      Material de estudio · Investigación documental
+    </div>
+
+    <h1>Historia de las Tecnologías de la Información</h1>
+
+    <p>
+      De las primeras herramientas para registrar el conocimiento
+      a los sistemas digitales que transforman la sociedad contemporánea.
+    </p>
+
+    <div class="hero-rule"></div>
+  </div>
+</header>
+
+<main>
+
+  <section class="lead-card">
+    <div class="section-head">
+      <span class="section-no">01</span>
+      <h2>Introducción</h2>
+    </div>
+
+    <p>
+      Las tecnologías de la información (TI) comprenden herramientas
+      y sistemas que permiten crear, almacenar, procesar y comunicar
+      datos. Su desarrollo ha acompañado los cambios sociales,
+      científicos y económicos, haciendo posible que la información
+      circule cada vez con mayor rapidez y alcance.
+    </p>
+  </section>
+
+  <section class="timeline-wrap">
+    <div class="section-head">
+      <span class="section-no">02</span>
+      <h2>Panorama histórico</h2>
+    </div>
+
+    <div class="timeline">
+
+      <article class="event">
+        <div class="year">Antigüedad</div>
+        <h3>Escritura y sistemas de cálculo</h3>
+        <p>
+          La escritura permitió conservar registros y transmitir
+          conocimientos entre generaciones. Herramientas como
+          el ábaco facilitaron las operaciones aritméticas.
+        </p>
+      </article>
+
+      <article class="event">
+        <div class="year">Siglo XV</div>
+        <h3>La imprenta</h3>
+        <p>
+          La impresión de textos en mayor escala amplió la circulación
+          del conocimiento y favoreció la difusión de ideas científicas
+          y culturales.
+        </p>
+      </article>
+
+      <article class="event">
+        <div class="year">Siglo XIX</div>
+        <h3>Revolución de las telecomunicaciones</h3>
+        <p>
+          El telégrafo y el teléfono hicieron posible transmitir
+          mensajes a distancia con una rapidez que transformó
+          el comercio y la vida cotidiana.
+        </p>
+      </article>
+
+      <article class="event">
+        <div class="year">Décadas de 1940–1970</div>
+        <h3>Computación electrónica</h3>
+        <p>
+          Las computadoras electrónicas automatizaron cálculos y
+          procesamiento de datos. La evolución de los transistores
+          y microprocesadores redujo su tamaño y costo.
+        </p>
+      </article>
+
+      <article class="event">
+        <div class="year">Décadas de 1980–2000</div>
+        <h3>Computación personal e internet</h3>
+        <p>
+          Las computadoras personales llegaron a hogares, escuelas
+          y oficinas. Internet y la Web conectaron usuarios y
+          facilitaron el intercambio global de información.
+        </p>
+      </article>
+
+      <article class="event">
+        <div class="year">Siglo XXI</div>
+        <h3>Movilidad, nube e inteligencia artificial</h3>
+        <p>
+          Los dispositivos móviles, la computación en la nube y la
+          inteligencia artificial han ampliado el acceso a servicios
+          digitales y la capacidad de analizar grandes cantidades
+          de datos.
+        </p>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="padlet-panel">
+    <div class="panel-head">
+      <div>
+        <div class="section-head">
+          <span class="section-no">03</span>
+          <h2>Recurso de consulta</h2>
+        </div>
+
+        <p>
+          Tablero complementario: historia de las tecnologías
+          de la información.
+        </p>
+      </div>
+
+      <a
+        class="btn"
+        href="https://padlet.com/vmchavezp/historia-de-las-tecnologias-de-la-informacion-8mhxtb51zivthmx6"
+        target="_blank"
+        rel="noopener noreferrer">
+        Abrir Padlet ↗
+      </a>
+    </div>
+
+    <iframe
+      src="https://padlet.com/vmchavezp/historia-de-las-tecnologias-de-la-informacion-8mhxtb51zivthmx6"
+      title="Tablero de Padlet sobre la historia de las tecnologías de la información"
+      loading="lazy">
+    </iframe>
+
+    <div class="fallback">
+      Si el contenido no se visualiza, abre el tablero mediante el botón.
+      La disponibilidad de la vista incrustada depende de la configuración
+      de Padlet.
+    </div>
+  </section>
+
+  <section class="conclusion">
+    <div class="section-head">
+      <span class="section-no">04</span>
+      <h2>Conclusión</h2>
+    </div>
+
+    <p>
+      La evolución de las tecnologías de la información refleja
+      el esfuerzo continuo por conservar, procesar y compartir
+      el conocimiento. Aunque estas herramientas ofrecen oportunidades
+      para la educación, la investigación y la comunicación, también
+      requieren un uso crítico y responsable, especialmente en materia
+      de privacidad, seguridad y acceso equitativo.
+    </p>
+  </section>
+
+</main>
+
+<footer>
+  <strong>Historia de las Tecnologías de la Información</strong>
+  <br>
+  Recurso académico · Consulta y aprendizaje
+</footer>
+
+</body>
+</html>
